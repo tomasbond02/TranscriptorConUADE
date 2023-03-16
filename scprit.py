@@ -12,8 +12,8 @@ recognizedText = ''
 videoName = 'example.mp4'#nombre del video a transcribir
 audioClipName = 'audioConvertido' 
 audio = 'audioConvertido'
-startSeconds = None #en que segundo quiero q empiece a transcribir
-endSeconds = None #en que segundo quiero q deje de transcribir
+startSeconds = 0 #en que segundo quiero q empiece a transcribir
+endSeconds = 10 #en que segundo quiero q deje de transcribir
 
 horaInicio = datetime.now()#para ver cuanto tardo
 cortadorMp4(videoName, startSeconds, endSeconds)
