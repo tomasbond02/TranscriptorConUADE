@@ -8,7 +8,7 @@ from transcriptorApi import *
 
 
 recognizedText = ''
-videoName = 'example.mp4'#nombre del video a transcribir
+videoName = 'video1.mp4'#nombre del video a transcribir
 audioClipName = 'audioConvertido' 
 audio = 'audioConvertido'
 startSeconds = '' #en que segundo quiero q empiece a transcribir
@@ -22,9 +22,12 @@ if endSeconds == '':
 
 cortadorMp4(videoName, startSeconds, endSeconds)
 convertor_a_mp3(videoName, audioClipName)
-recognizedText = reconocedor(audio)
+recognizedText, traduccionIngles = reconocedor(audio)
 print(recognizedText)
-speechToText(recognizedText)
+print(traduccionIngles)
 text_file = open('transcripcion.txt','w')#exporta un txt con la transcri
-n = text_file.write(recognizedText)
+text_file.write(recognizedText)
 text_file.close()
+text_traduction = open('traduction.txt', 'w')
+text_traduction.write(traduccionIngles)
+text_traduction.close()

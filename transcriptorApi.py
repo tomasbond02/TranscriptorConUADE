@@ -24,7 +24,14 @@ def reconocedor(audio:str):
     model = whisper.load_model("medium")#se puede utilizar tiny, base, small, medium y large siendo que tiny tranquibe videos de 10 seg en menos de un minuto pero es mas propenso a errores y large... tarda mucho pero es casi perfecto
     result = model.transcribe(audioR)
     recognizedText = result["text"]
-    return recognizedText
+    task = "translate"
+    resultadoTraductor = model.transcribe(audioR, task=task)
+    resultadoReconozido = resultadoTraductor["text"]
+    return recognizedText, resultadoReconozido
+
+def traductor(texto:str):
+    translation = whisper.translate(texto, "es", "en")
+    print(translation)
 
 def deleteFile(fileName: str):
     os.remove(fileName)
