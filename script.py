@@ -12,7 +12,7 @@ videoName = 'video1.mp4'#nombre del video a transcribir
 audioClipName = 'audioConvertido' 
 audio = 'audioConvertido'
 startSeconds = '' #en que segundo quiero q empiece a transcribir
-endSeconds = '' #en que segundo quiero q deje de transcribir
+endSeconds = '30' #en que segundo quiero q deje de transcribir
 audioSec = mp.VideoFileClip(videoName)
 
 if startSeconds == '':
