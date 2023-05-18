@@ -1,8 +1,6 @@
 #import speech_recognition as sr
 import moviepy.editor as mp
-import pyttsx3
 import whisper
-import os
 
 def cortadorMp4(videoName:str, startSeconds: int = None, endSeconds:int = None):
     #en el caso que se quiera delimitar los segundos de transcripcion
@@ -29,19 +27,3 @@ def reconocedor(audio:str):
     resultadoReconozido = resultadoTraductor["text"]
     return recognizedText, resultadoReconozido
 
-def traductor(texto:str):
-    translation = whisper.translate(texto, "es", "en")
-    print(translation)
-
-def deleteFile(fileName: str):
-    os.remove(fileName)
-
-def speechToText(text):
-    #es para q exporte un mp3 con voz de robot estoy haciendo pruebas
-    engine = pyttsx3.init()
-    rate = engine.getProperty('rate')
-    engine.setProperty('rate', rate-86)
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[0].id)
-    engine.save_to_file(text, "opf.mp3")
-    engine.runAndWait()

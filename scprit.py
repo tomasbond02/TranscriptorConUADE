@@ -3,7 +3,7 @@ from transcriptorApi import *
 '''Para utilizar el programa hay que instalar 3 cosas
     1- anaconda ya que torch (importante para el programa) no funciona en otros env
     2- chocolatey para instalar ffmpeg que tambien es importante
-    3- recomiendo hacer un env en anaconda con todos los requerimientos para tener todo juntito :-)
+    3- recomiendo hacer un env en anaconda con todos los requerimientos para tener todo junto
 '''
 
 
