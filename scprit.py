@@ -25,7 +25,7 @@ convertor_a_mp3(videoName, audioClipName)
 recognizedText, traduccionIngles = reconocedor(audio)
 print(recognizedText)
 print(traduccionIngles)
-text_file = open('transcripcion.txt','w')#exporta un txt con la transcri
+text_file = open('transcripcion.txt','w')#exporta un txt con la transcripcion
 text_file.write(recognizedText)
 text_file.close()
 text_traduction = open('traduction.txt', 'w')

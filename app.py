@@ -64,7 +64,6 @@ def main():
         cortadorMp4(videoName, startSeconds, endSeconds)
         convertor_a_mp3(videoName, audioClipName)
         recognizedText = reconocedor(audio)
-        audio = speechToText(recognizedText)
         
     except Exception as e:
         print(e)
